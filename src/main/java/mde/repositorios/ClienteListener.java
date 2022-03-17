@@ -10,19 +10,22 @@ import mde.entidades.Cliente;
 
 @Component
 public class ClienteListener {
- private ClienteDAO clienteDAO;
- 
- @Autowired
- public void init (ClienteDAO clienteDAO) {
-	 this.clienteDAO = clienteDAO;
-}
- @PrePersist
+
+	private ClienteDAO clienteDAO;
+
+	@Autowired
+	public void init(ClienteDAO clienteDAO) {
+		this.clienteDAO = clienteDAO;
+	}
+
+	@PrePersist
 	public void preGuardarCliente(Cliente cliente) {
 		System.err.println("Se va a guardar un cliente: " + cliente.getNombre());
 	}
- @PreRemove
- 	public void preBorrar(Cliente cliente) {
-	 System.err.println("Se va a borrar un cliente: " + cliente.getNombre());
- 
- 	}
+
+	@PreRemove
+	public void preBorrar(Cliente cliente) {
+		System.err.println("Se va a borrar un cliente: " + cliente.getNombre());
+
+	}
 }

@@ -21,7 +21,7 @@ public class Producto {
 	private long id;
 	private String nombre;
 	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "CLIENTE")
+	@JoinColumn(name = "ID_CLIENTE")
 	private Cliente cliente;
 	
 	public long getId() {

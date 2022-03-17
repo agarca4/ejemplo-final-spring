@@ -1,6 +1,6 @@
 package mde.entidades;
 
-import java.time.LocalDateTime;
+import java.time.Instant;
 import java.util.Collection;
 
 import javax.persistence.CascadeType;
@@ -26,7 +26,7 @@ public class Cliente {
 	private long id;
 	private String nombre;
 	@Column(name = "FECHA_NACIMIENTO")
-	private LocalDateTime fechaNacimiento;
+	private Instant fechaNacimiento;
 	private boolean raza;
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = Producto.class, mappedBy = "cliente")
 	private Collection<Producto> productos;
@@ -51,11 +51,11 @@ public class Cliente {
 		this.nombre = nombre;
 	}
 
-	public LocalDateTime getFechaNacimiento() {
+	public Instant getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
-	public void setFechaNacimiento(LocalDateTime fechaNacimiento) {
+	public void setFechaNacimiento(Instant fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 

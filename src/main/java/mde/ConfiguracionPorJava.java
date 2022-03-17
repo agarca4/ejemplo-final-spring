@@ -29,6 +29,7 @@ import org.springframework.web.filter.CorsFilter;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mde.entidades.Cliente;
+import mde.entidades.Producto;
 import mde.rest.ClienteController;
 import mde.rest.Mixins;
 
@@ -40,6 +41,7 @@ public class ConfiguracionPorJava {
 
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.addMixIn(Cliente.class, Mixins.Cliente.class);
+
 
 		return mapper;
 	}

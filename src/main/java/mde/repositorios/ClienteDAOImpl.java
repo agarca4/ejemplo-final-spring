@@ -1,5 +1,6 @@
 package mde.repositorios;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,9 +24,9 @@ public class ClienteDAOImpl implements ClienteDaoCustom {
 	EntityManager entityManager;
 
 	@Override
-	public List<Cliente> getClientesConFechaPosterior() {
+	public List<Cliente> getClientesConFechaPosterior(Instant fecha) {
 		List<Cliente> clientes = clienteDAO.findAll().stream()
-				.filter(j -> j.getFechaNacimiento().isAfter(LocalDateTime.of(1990, 1, 1, 00, 00, 00)))
+				.filter(j -> j.getFechaNacimiento().isAfter(fecha))
 				.collect(Collectors.toList());
 
 		return clientes;
