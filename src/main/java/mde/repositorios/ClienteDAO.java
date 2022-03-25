@@ -13,7 +13,7 @@ import mde.entidades.Cliente;
 public interface ClienteDAO extends JpaRepository<Cliente, Long>, ClienteDaoCustom{
 	
 	@RestResource(path="por-nombre")
-    List<Cliente> findByNombreContaining(@Param("nombre")String txt);
+    List<Cliente> findByNombreIgnoreCase(@Param("nombre")String txt);
 	
 //	@RestResource(exported = false)
 //	void delete(Cliente cliente);

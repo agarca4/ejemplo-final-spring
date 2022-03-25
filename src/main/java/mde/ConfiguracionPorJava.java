@@ -14,7 +14,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.RepositorySearchesResource;
 import org.springframework.hateoas.Link;
@@ -34,6 +36,7 @@ import mde.rest.ClienteController;
 import mde.rest.Mixins;
 
 @Configuration
+@ComponentScan("mde")
 public class ConfiguracionPorJava {
 
 	@Bean
@@ -51,6 +54,7 @@ public class ConfiguracionPorJava {
 		Map<Class<?>, Class<?>> controllersRegistrados = new HashMap<>();
 
 		controllersRegistrados.put(Cliente.class, ClienteController.class);
+
 
 		return new RepresentationModelProcessor<RepositorySearchesResource>() {
 
