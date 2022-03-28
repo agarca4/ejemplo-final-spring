@@ -36,7 +36,7 @@ import mde.rest.ClienteController;
 import mde.rest.Mixins;
 
 @Configuration
-@ComponentScan("mde")
+@ComponentScan("mde.rest")
 public class ConfiguracionPorJava {
 
 	@Bean
